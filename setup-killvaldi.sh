@@ -12,6 +12,7 @@ echo "set up, you should CTRL-C right now and follow the instructions at the end
 echo "script before continuuing, otherwise hit RETURN/ENTER."
 echo
 echo -n "Press RETURN/ENTER to continue; CTRL-C to quit"
+
 read  key
 
 echo "Creating ~/.local/launchd directory to store launchd job script"
@@ -22,7 +23,7 @@ echo "Writing ~/.local/launchd/killvaldi.sh"
 
 cat <<EOF >${HOME}/.local/launchd/killvaldi.sh
 #!/bin/ksh
-items=$(osascript -e 'tell application "System Events" to get the name of every login item')
+items=\$(osascript -e 'tell application "System Events" to get the name of every login item')
 
 if [[ "\${items)" =~ Vivaldi ]]; then
 	osascript -e 'tell application "System Events" to delete login item "Vivaldi"' 
