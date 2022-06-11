@@ -32,6 +32,8 @@ EOF
 
 chmod 755 ${HOME}/.local/launchd/killvaldi.sh
 
+${HOME}/launchd/killvaldi.sh
+
 echo "Writing ~/Library/LaunchAgents/is.rud.killvaldi.plist launchd property list"
 
 cat <<EOF >${HOME}/Library/LaunchAgents/is.rud.killvaldi.plist
