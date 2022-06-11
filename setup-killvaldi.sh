@@ -25,7 +25,7 @@ cat <<EOF >${HOME}/.local/launchd/killvaldi.sh
 #!/bin/ksh
 items=\$(osascript -e 'tell application "System Events" to get the name of every login item')
 
-if [[ "\${items)" =~ Vivaldi ]]; then
+if [[ "\${items}" =~ Vivaldi ]]; then
 	osascript -e 'tell application "System Events" to delete login item "Vivaldi"' 
 fi
 EOF
